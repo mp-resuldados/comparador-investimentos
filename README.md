@@ -13,4 +13,8 @@ Segue o link para a aplicação: [comparador_de_investimentos](https://comparado
 ***
 **AVISO**: Este trabalho tem fins meramente didáticos, não devendo ser considerado como orientação de investimento. Não nos responsabilisamos por quaisquer decisões que sejam tomadas com base neste comparador. Sempre busque a orientação de um consultor financeiro antes de tomar suas decisões de investimento.
 ***
-continua...
+MP-resuldados
+
+Dos dados aos resultados. Um pouco de física, matemática, negócios e finanças.
+
+
