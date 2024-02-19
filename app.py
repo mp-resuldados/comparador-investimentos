@@ -14,8 +14,8 @@ import streamlit as st
 cols = st.columns(2)
 
 with cols[0]:
-    st.header('MP-resuldados', divider=True)
-    st.subheader('Comparador de investimentos')
+    st.subheader('MP-resuldados', divider=True)
+    st.caption('Comparador de investimentos')
 
     col1, col2 = st.columns(2)
     with col1:
