@@ -1,9 +1,11 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib.dates import DateFormatter
 import ipywidgets as widgets
 from ipywidgets import interact  
 import datetime
+from dateutil.relativedelta import relativedelta
 from workadays import workdays as wd
 import streamlit as st
 
@@ -26,7 +28,7 @@ with cols[0]:
     with col2:
 
         b = st.date_input('Data final',
-                          datetime.date.today()+datetime.timedelta(days=365),
+                          datetime.date.today()+relativedelta(years=1),
                           format='DD.MM.YYYY')
 
     cursor = st.slider(
@@ -45,7 +47,7 @@ with cols[0]:
 # FUNÇÕES
 
 with cols[1]:
-    taxaDI = 0.1125
+    taxaDI = 0.1286
     C = (1+taxaDI)**(1/252) - 1
 
 
@@ -108,10 +110,13 @@ with cols[1]:
         ax.plot(dias, R_CDB(a, dias, cdb), label=f'CDB {cdb}%')
         ax.plot(dias, R_LCI(a, dias, lci), label=f'LCI {round(lci,1)}%')
         ax.set_title('Comparação entre um CDB e um LCI/ LCA')
-       # ax.set_xlabel('datas')
+        date_form = DateFormatter('%m-%Y')
+        ax.xaxis.set_major_formatter(date_form)
         ax.set_ylabel('rendimento líquido em %')
         ax.legend(loc='upper left', ncols=1)
-        ax.grid()
+        ax.grid(which = "major")
+        ax.grid(which = "minor", alpha = 0.2)
+        ax.set_axisbelow(True)
         ax.text(
             0.5,
             0.5,
